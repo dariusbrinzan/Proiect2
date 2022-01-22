@@ -93,7 +93,6 @@ public class Input {
     }
 
     private void distributeGifts() {
-        //Collections.sort(getInitialData().getChildren());
         for (Child child: getInitialData().getChildren()) {
             boolean isYellowElf = false;
             switch (child.getElf()) {
