@@ -5,12 +5,13 @@ In clasa main realizez citirea json-urilor utilizand gson fiindca dupa cateva se
 este mai intuitiv. Pe langa clasa de main + package-ul de main, am realizat package-ul xmas unde se afla
 toata implementarea proiectului meu.
 
-Flow general: In clasa main se parseaza json-urile cu gson, creandu-se o instanta a clasei Input. In clasa Input care contine
-încapsulată toata informatia, se aplica flow-ul simularii proiectului meu .
+Flow general: In clasa main se parseaza json-urile cu gson, creandu-se o instanta a clasei Input. In clasa Input care
+contine încapsulată toata informatia, se aplica flow-ul simularii proiectului meu .
 
-Clasa de Child, este clasa care imi creeaza obiecte de tip 'Copil' unde construiesc un constructor cu toti parametri pe care
-ii are un copil, getter + setter pentru fiecare set de date pe care clasa mea le contine + am mai realizat in plus si metode
-care care imi calculeaza costul total al gift-urilor pentru obiectul copil curent, adaugat in lista cadourile adaugate .
+Clasa de Child, este clasa care imi creeaza obiecte de tip 'Copil' unde construiesc un constructor cu toti
+parametri pe care ii are un copil, getter + setter pentru fiecare set de date pe care clasa mea le contine +
+am mai realizat in plus si metode care care imi calculeaza costul total al gift-urilor pentru obiectul copil
+curent, adaugat in lista cadourile adaugate .
 
 Clasa AnnualChange se refera la schimbarile / actualizarile care sunt suferite la trecerea unui an .
 Clasa AnnualChildren se refera la schimbarile suferite de catre un copil la trecerea unui an.
@@ -22,24 +23,44 @@ preturile .
 
 Clasa ObjectCloner este o clasa care imi cloneaza obiecte care sunt deja create utilizand un DeepCopy.
 
-Clasa InitialData este o clasa cu datele initiale unde am ca set de date o lista de copii, un array in care am gift-urile
-si un map unde am sortat categoriile cadourilor in functie de pretul acestora . In continuare, am realizat metode in care
-am plasat copii in functie de categoria de varsta in care se incadreaza + calculul averageScore-ului in functie de varsta
-lor + incrementarea varstei in functie de trecerea anilor .
+Clasa InitialData este o clasa cu datele initiale unde am ca set de date o lista de copii, un array in care
+am gift-urile si un map unde am sortat categoriile cadourilor in functie de pretul acestora . In continuare,
+am realizat metode in care am plasat copii in functie de categoria de varsta in care se incadreaza + calculul
+averageScore-ului in functie de varsta lor + incrementarea varstei in functie de trecerea anilor .
 
-Clasa Input este clasa unde pot spune ca se intampla majoritatea flow-ului proiectului meu . In aceasta, ca date ale acesteia
-avem informatii care ni s-au dat in Json-uri . Avem pe cati ani se face simularea, bugetul mosului, datele initiale (instantierea
-clasei InitialData, bugetul si schimbarile anuale . Am calculat budgetUnit-ul dupa care l-am alocat fiecarui copil in parte.
-Am mai realizat metode in care am distribuit gift-urile la fiecare copil in parte, am updatat scorurile copiilor dupa ce a trecut
-un an, am aplicat schimbarile efectuate si am inceput o noua simulare a programului .
+Clasa Input este clasa unde pot spune ca se intampla majoritatea flow-ului proiectului meu . In aceasta, ca date ale
+acesteia avem informatii care ni s-au dat in Json-uri . Avem pe cati ani se face simularea, bugetul mosului, datele
+initiale (instantierea clasei InitialData, bugetul si schimbarile anuale . Am calculat budgetUnit-ul dupa care
+l-am alocat fiecarui copil in parte. Am mai realizat metode in care am distribuit gift-urile la fiecare copil
+in parte, am updatat scorurile copiilor dupa ce a trecut un an, am aplicat schimbarile efectuate si am inceput
+o noua simulare a programului .
 
 
 Partea a doua :
 
+Pe langa implementarile realizate la prima etapa a proiectului prezentate mai sus am mai realizat clasele :
+SortByNiceScore si SortByNiceScoreCity .  Pe langa aceastea am fost nevoit sa mai recurg si la unele mici
+modificari ale codului existent.
 
+Clasa SortByNiceScore este o clasa care implementeaza comparator, unde mi-am implementat o metoda utila care
+sa ma ajute sa sortez in functie de niceScore.
 
+Clasa SortByNiceScoreCity este de asemenea o clasa care implementeaza comparator, unde am implementat o metoda
+care sa ma ajute sa sortez in functie de niceScoreCity. In plus, in constructorul acestei clase am initializat
+un map unde cheia este orasul, iar value sunt copiii, care ma ajuta in gasirea averageScore-ului minim
+in functie de oras, pentru a sti cum impartim cadourile .
 
+In clasa InitialData, in metoda setAverageScoreForEachChild, am aplicat metoda noua de calculare a averageScore-ului
+aceasta fiind: updateAverageScoreUsingBonus + metoda sortChildrenByStrategy unde am utilizat un switch in functie
+de strategia pe care o primeam la input .
 
+In clasa Gift, am adaugat quantity deoarece mosul acum are un numar limitat de cadouri .
 
+In clasa Child, am realizat metoda updateAverageScoreUsingBonus care imi updateaza averageScore-ul utilizand
+bonusul adaugat in partea a doua a proiectului .
 
-
+In clasa Input, am pastrat majoritatea implementarii de la partea 1 a proiectului, aceasta clasa fiind nucleul
+proiectului meu ca sa zic. Ce am adus in plus in aceasta clasa este metoda distributeGifts unde realizez implementarea
+elfilor : Elful white nu face absolut nimic, Black - scade 30% din assigned budget, Pink-ul adauga 30%, iar elful yellow
+imparte cadourile copiilor care nu au primit deja . In rest, in metodele ce tin de flow-ul simularii am adaugat metodele
+in 'pozitii' corecte pot sa spun, ca in concluzie sa ajung la un rezultat corect .
