@@ -3,7 +3,6 @@ package xmas;
 import java.util.Comparator;
 
 public class SortByNiceScore implements Comparator<Child> {
-
     @Override
     public final int compare(final Child o1,
                              final Child o2) {

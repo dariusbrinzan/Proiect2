@@ -32,7 +32,6 @@ public final class Main {
     }
 
     private static void runTests() {
-//        runTest(22);
         for (int testNumber = 1; testNumber <= Constants.TESTS_NUMBER; ++testNumber) {
             runTest(testNumber);
         }

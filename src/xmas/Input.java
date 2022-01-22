@@ -93,22 +93,7 @@ public class Input {
     }
 
     private void distributeGifts() {
-//        Collections.sort(getInitialData().getChildren());
-//        for (Child child: getInitialData().getChildren()) {
-//            System.out.print(child.getId());
-//            System.out.print(" ");
-//        }
-//        System.out.println();
-//        for (int i = 1; i < getInitialData().getChildren().size(); ++i) {
-//            assert getInitialData().getChildren().get(i).getId() >
-//            getInitialData().getChildren().get(i - 1).getId();
-//            if (getInitialData().getChildren().get(i).getId() <
-//            getInitialData().getChildren().get(i - 1).getId()) {
-//                System.out.println(
-//                "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-//            }
-//        }
+        //Collections.sort(getInitialData().getChildren());
         for (Child child: getInitialData().getChildren()) {
             boolean isYellowElf = false;
             switch (child.getElf()) {
